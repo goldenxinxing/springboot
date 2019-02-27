@@ -1,0 +1,10 @@
+/.settings
+/.project
+/.svn
+/.idea
+*.iml
+.idea
+/target
+*.iml
+.project
+.settings
