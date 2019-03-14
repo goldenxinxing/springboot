@@ -7,11 +7,14 @@ import org.springframework.amqp.rabbit.annotation.QueueBinding;
 import org.springframework.amqp.rabbit.annotation.RabbitListener;
 import org.springframework.stereotype.Service;
 
+import java.util.concurrent.atomic.AtomicInteger;
+
 import static foo.rmq.config.RabbitConfiguration.KEY;
 import static foo.rmq.config.RabbitConfiguration.TOPIC;
 
 @Service
 public class ConsumerA {
+    private static AtomicInteger exceptionNum = new AtomicInteger(0);
     @RabbitListener(bindings =
     @QueueBinding(
             value = @Queue(value = KEY, durable = "true"),
@@ -27,6 +30,7 @@ public class ConsumerA {
             } catch (InterruptedException e) {
                 e.printStackTrace();
             }
+            System.out.println(String.format("total num:%d", exceptionNum.incrementAndGet()));
             throw new RuntimeException("test");
         }
 
