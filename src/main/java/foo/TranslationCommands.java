@@ -1,5 +1,7 @@
 package foo;
 
+import foo.producer.ProducerA;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.shell.standard.ShellComponent;
 import org.springframework.shell.standard.ShellMethod;
 import org.springframework.shell.standard.ShellOption;
@@ -26,5 +28,16 @@ public class TranslationCommands {
         //        return service.translate(text, from, to);
         System.out.println(String.format("%s,%s,%s", text, from, to));
         return "";
+    }
+
+    @Autowired
+    private ProducerA producerA;
+
+    @ShellMethod("test")
+    public String produce(
+            @ShellOption() Long cid
+    ){
+        System.out.println(String.format("正在生产 %d", cid));
+        return producerA.produceMsg(cid);
     }
 }
