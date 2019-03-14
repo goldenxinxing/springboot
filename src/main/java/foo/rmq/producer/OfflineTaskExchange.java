@@ -1,4 +1,4 @@
-package foo.producer;
+package foo.rmq.producer;
 
 
 import static foo.OfflineTaskConstant.*;

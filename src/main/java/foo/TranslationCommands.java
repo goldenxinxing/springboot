@@ -1,6 +1,6 @@
 package foo;
 
-import foo.producer.ProducerA;
+import foo.rmq.producer.ProducerA;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.shell.standard.ShellComponent;
 import org.springframework.shell.standard.ShellMethod;
