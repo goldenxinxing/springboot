@@ -1,0 +1,17 @@
+spring:
+  rabbitmq:
+    host: 127.0.0.1
+    port: 5672
+    username: admin
+    password: gxx123456
+  application:
+    name: test-listener2
+server:
+  port: 8083
+management:
+  security:
+    enabled: false
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://localhost:9099/eureka/
