@@ -1,4 +1,4 @@
-package foo;
+package foo.shell;
 
 import foo.rmq.producer.ProducerA;
 import org.springframework.beans.factory.annotation.Autowired;

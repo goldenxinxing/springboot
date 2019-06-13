@@ -1,7 +1,7 @@
 package foo.rmq.producer;
 
 
-import static foo.OfflineTaskConstant.*;
+import static foo.rmq.OfflineTaskConstant.*;
 
 public enum OfflineTaskExchange {
 
