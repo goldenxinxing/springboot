@@ -6,6 +6,11 @@ spring:
     password: gxx123456
   application:
     name: test
+  mvc:
+    locale: zh_CN #初始化语言环境
+  messages:
+    basename: messages #国际化配置位置
+
 server:
   port: 8081
 management:

@@ -1,10 +1,14 @@
 package com.megvii.springcloudbus.controller;
 
+import com.megvii.springcloudbus.model.User;
 import com.megvii.test.MyEvent;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.ApplicationEventPublisher;
+import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.*;
+
+import javax.validation.Valid;
 
 /**
  * @Package: com.megvii.springcloudbus.test.config<br>
@@ -38,6 +42,13 @@ public class Controller {
         event.setMessage(msg);
         //发布事件
         applicationContext.publishEvent(event);
+        return "success";
+    }
+
+    @ResponseBody
+    @PostMapping("testValid")
+    public String testValid(@Valid User user){
+        System.out.println(user.getName());
         return "success";
     }
 }
