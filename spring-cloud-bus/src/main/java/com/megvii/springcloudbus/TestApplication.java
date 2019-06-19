@@ -17,7 +17,7 @@ import org.springframework.context.annotation.PropertySource;
 @SpringBootApplication
 @EnableEurekaClient
 @PropertySource(value = "ValidationMessages.properties", encoding = "UTF-8")
-@EnableAutoConfiguration(exclude= SecurityAutoConfiguration.class)
+//@EnableAutoConfiguration(exclude= SecurityAutoConfiguration.class)
 public class TestApplication {
     public static void main(String[] args){
         SpringApplication.run(TestApplication.class, args);
