@@ -22,7 +22,7 @@ public class EventConfiguration {
 
     @EventListener
     public void onEvent(MyEvent event){
-        System.out.printf("MyEvent - Source : %s , originService : %s, destinationService : %s\n",
+        System.out.printf("Listener1 - Source : %s , originService : %s, destinationService : %s\n",
                 event.getMessage(), event.getOriginService(), event.getDestinationService());
     }
 }
